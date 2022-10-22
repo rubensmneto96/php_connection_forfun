@@ -39,6 +39,20 @@
                 <th scope="row"><?= $row['id_usuario']; ?></th>
                 <td><?= $row['nomeUser']; ?></td>
                 <td><?= $row['email']; ?></td>
+                <form action="./editarDados.php" method="post">
+                    <td>
+                        <input type="hidden" name="id_usuario" value="<?= $row['id_usuario']; ?>">
+                        <button type="submit" class="btn btn-success">Editar</button>
+                    </td>
+                </form>
+                <form action="./deletarDados.php" method="post">
+                    <td>
+                        <input type="hidden" name="id_usuario" value="<?= $row['id_usuario']; ?>">
+                        <input type="hidden" name="nomeUser" value="<?= $row['nomeUser']; ?>">
+                        <input type="hidden" name="email" value="<?= $row['email']; ?>">
+                        <button type="submit" class="btn btn-danger">Deletar</button>
+                    </td>
+                </form>
                 </tr>
 
                 <?php
